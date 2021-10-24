@@ -1,6 +1,6 @@
 import React , {useState} from "react";
 
-const UserForm = () => {
+const UserForm = (props) => {
    const [enteredUsername, setEnteredUsername] = useState("");
    const [enteredAge, setEnteredAge] = useState("");
    const [isValid, setIsValid] = useState(true);
@@ -19,6 +19,12 @@ const UserForm = () => {
     if(enteredUsername.trim().length > 0 && enteredAge.trim().length > 0){
       console.log(enteredUsername,enteredAge);
       setIsValid(true);
+
+      const info = {
+        username: enteredUsername,
+        age: enteredAge
+      };
+      props.onSubmitInfo(info);
     }else{
       setIsValid(false);
     }
