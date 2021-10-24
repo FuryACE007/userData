@@ -1,9 +1,9 @@
 const UsersInfo = (props) =>{
     
     return(
-        <div className="container flex flex-col w-1/2 mx-auto bg-white rounded-md p-5 mt-6">
-            <div className ="container flex flex-col p-3">
-                Hi I am john!
+        <div>
+            <div className ="container flex flex-col p-3 border-2 border-purple-300 rounded-md shadow-md">
+                John (28 years old)
             </div>
         </div>
     );

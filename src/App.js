@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 
 import UserForm from "./components/UserForm";
-import UserInfo from "./components/UserInfo";
+import UsersList from "./components/UsersList";
 
 function App() {
   const [nameVal, setNameVal] = useState("");
@@ -15,7 +15,7 @@ function App() {
     <div className=" bg-black min-h-screen">
       <p className=" text-lg text-purple-700 text-center uppercase pt-5">User Database</p>
       <UserForm onSubmitInfo = {infoSubmitHandler} />
-      <UserInfo name= {nameVal} age = {ageVal} />
+      <UsersList name= {nameVal} age = {ageVal}  />
     </div>
   );
 };
