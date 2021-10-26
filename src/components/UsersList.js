@@ -1,12 +1,15 @@
 import UsersInfo from "./UserInfo";
 
-const UsersList = (props) =>{
-    return(
-        <div className="container flex flex-col w-1/2 mx-auto bg-white rounded-md p-5 mt-6">
-            <UsersInfo userName = {props.name} userAge = {props.age} />
-        </div>
-    );
-
+const UsersList = (props) => {
+  return (
+    <div className="container flex flex-col w-1/2 mx-auto bg-white rounded-md p-5 mt-6">
+      <ul>
+        {props.arr.map((user) => (
+          <UsersInfo id={user.id} name={user.name} age={user.age} />
+        ))}
+      </ul>
+    </div>
+  );
 };
 
 export default UsersList;
