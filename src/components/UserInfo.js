@@ -1,5 +1,5 @@
 const UsersInfo = (props) =>{
-    console.log("userinfo", props.age);
+    // console.log("userinfo", props.age);
     
     return(
         <li>

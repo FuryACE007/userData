@@ -17,7 +17,7 @@ const UserForm = (props) => {
     event.preventDefault();
 
     if(enteredUsername.trim().length > 0 && enteredAge.trim().length > 0){
-      console.log(enteredUsername,enteredAge);
+      // console.log(enteredUsername,enteredAge);
       setIsValid(true);
 
       const info = {
