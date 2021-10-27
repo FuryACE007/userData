@@ -12,12 +12,12 @@ let usersArr = [
 ];
 
 function App() {
-  const [nameVal, setNameVal] = useState("");
-  const [ageVal , setAgeVal] = useState("");
+  const [nameVal, setNameVal] = useState(""); //we just use this to revaluate the webpage, we dont actually need this variable
+  // const [ageVal , setAgeVal] = useState("");
 
   const infoSubmitHandler = (info)=>{
     setNameVal(info.username);
-    setAgeVal(info.age);
+    // setAgeVal(info.age);
     usersArr.push(info);
   };
   console.log(nameVal);
@@ -25,7 +25,7 @@ function App() {
     <div className=" bg-black min-h-screen">
       <p className=" text-lg text-purple-700 text-center uppercase pt-5">User Database</p>
       <UserForm onSubmitInfo = {infoSubmitHandler} />
-      <UsersList name= {nameVal} age = {ageVal} arr = {usersArr}  />
+      <UsersList arr = {usersArr}  />
     </div>
   );
 };
