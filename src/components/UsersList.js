@@ -5,7 +5,7 @@ const UsersList = (props) => {
     <div className="container flex flex-col w-1/2 mx-auto bg-white rounded-md p-5 mt-6">
       <ul>
         {props.arr.map((user) => (
-          <UsersInfo id={user.id} name={user.name} age={user.age} />
+          <UsersInfo key={Math.random()} name={user.name} age={user.age} />
         ))}
       </ul>
     </div>

@@ -25,7 +25,7 @@ function App() {
     <div className=" bg-black min-h-screen">
       <p className=" text-lg text-purple-700 text-center uppercase pt-5">User Database</p>
       <UserForm onSubmitInfo = {infoSubmitHandler} />
-      <UsersList id={Math.random()} name= {nameVal} age = {ageVal} arr = {usersArr}  />
+      <UsersList name= {nameVal} age = {ageVal} arr = {usersArr}  />
     </div>
   );
 };
