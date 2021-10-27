@@ -4,7 +4,7 @@ const UsersInfo = (props) =>{
     return(
         <li>
             <div className ="container flex flex-col p-3 border-2 border-purple-300 rounded-md shadow-md mt-2">
-                {props.name} (Age {props.age})
+                {props.userName} (Age {props.userAge})
             </div>
         </li>
     );
