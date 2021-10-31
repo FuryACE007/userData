@@ -16,8 +16,7 @@ const UserForm = (props) => {
   const submitHandler = (event)=>{
     event.preventDefault();
 
-    if(enteredUsername.trim().length > 0 && enteredAge > 0){
-      // console.log(enteredUsername,enteredAge);
+    if(enteredUsername.trim().length > 0 && +enteredAge > 0){ //+ ensures age is converted to number
       setIsValid(true);
 
       const info = {

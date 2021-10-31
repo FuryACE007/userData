@@ -2,6 +2,7 @@ import React, {useState} from "react";
 
 import UserForm from "./components/UserForm";
 import UsersList from "./components/UsersList";
+import InvalidMessage from "./components/InvalidMessage";
 
 let usersArr = [
   {
@@ -22,10 +23,11 @@ function App() {
   };
   console.log(nameVal);
   return (
-    <div className=" bg-black min-h-screen">
+    <div className=" bg-gray-900 min-h-screen">
       <p className=" text-lg text-purple-700 text-center uppercase pt-5">User Database</p>
       <UserForm onSubmitInfo = {infoSubmitHandler} />
       <UsersList arr = {usersArr}  />
+      <InvalidMessage />
     </div>
   );
 };
