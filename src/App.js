@@ -2,7 +2,6 @@ import React, {useState} from "react";
 
 import UserForm from "./components/UserForm";
 import UsersList from "./components/UsersList";
-import InvalidMessage from "./components/InvalidMessage";
 
 let usersArr = [
   {
@@ -14,11 +13,9 @@ let usersArr = [
 
 function App() {
   const [nameVal, setNameVal] = useState(""); //we just use this to revaluate the webpage, we dont actually need this variable
-  // const [ageVal , setAgeVal] = useState("");
 
   const infoSubmitHandler = (info)=>{
     setNameVal(info.username);
-    // setAgeVal(info.age);
     usersArr.push(info);
   };
   console.log(nameVal);
@@ -27,7 +24,6 @@ function App() {
       <p className=" text-lg text-purple-700 text-center uppercase pt-5">User Database</p>
       <UserForm onSubmitInfo = {infoSubmitHandler} />
       <UsersList arr = {usersArr}  />
-      <InvalidMessage />
     </div>
   );
 };
