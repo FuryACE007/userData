@@ -16,7 +16,7 @@ const UserForm = (props) => {
   const submitHandler = (event)=>{
     event.preventDefault();
 
-    if(enteredUsername.trim().length > 0 && enteredAge.trim().length > 0){
+    if(enteredUsername.trim().length > 0 && enteredAge > 0){
       // console.log(enteredUsername,enteredAge);
       setIsValid(true);
 
@@ -28,6 +28,8 @@ const UserForm = (props) => {
     }else{
       setIsValid(false);
     }
+    setEnteredUsername('');
+    setEnteredAge('');
   };
 
   // Styles
@@ -38,12 +40,12 @@ const UserForm = (props) => {
     <div className="container flex flex-col w-1/2 mx-auto bg-white rounded-md p-5 mt-6">
       <form onSubmit = {submitHandler}>
         <div>
-          <label className= {labelStyle.labelClass} >Username</label>
-          <input className= {`${inputStyle.inputClass} ${!isValid ? 'ring-2 ring-red-500 bg-red-200': 'ring ring-transparent bg-gray-300'}`} onChange={usernameInputHandler} type="text" placeholder="Enter username" />
+          <label htmlFor="username" className= {labelStyle.labelClass} >Username</label>
+          <input id="username" value={enteredUsername} className= {`${inputStyle.inputClass} ${!isValid ? 'ring-2 ring-red-500 bg-red-200': 'ring ring-transparent bg-gray-300'}`} onChange={usernameInputHandler} type="text" placeholder="Enter username" />
         </div>
         <div className="my-2">
-          <label className={labelStyle.labelClass}>Age (Years)</label>
-          <input className= {`${inputStyle.inputClass} ${!isValid ? 'ring-2 ring-red-500 bg-red-200': 'ring ring-transparent bg-gray-300'}`} onChange={ageInputHandler} type="number" placeholder="Age" />
+          <label htmlFor="age" className={labelStyle.labelClass}>Age (Years)</label>
+          <input id="age" value={enteredAge} className= {`${inputStyle.inputClass} ${!isValid ? 'ring-2 ring-red-500 bg-red-200': 'ring ring-transparent bg-gray-300'}`} onChange={ageInputHandler} type="number" placeholder="Age" />
         </div>
         <button type = "submit" className ="items-center p-2 px-6 mt-2 text-white transition-all bg-purple-800 rounded-md shadow-lg w-max hover:bg-purple-900 hover:shadow-none">Add User</button>
       </form>
