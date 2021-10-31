@@ -32,6 +32,11 @@ const UserForm = (props) => {
     setEnteredAge('');
   };
 
+  const okayClickHandler=(boolVal)=>{
+    setIsValid(boolVal);
+    // console.log(boolVal);
+  };
+
   // Styles
   const labelStyle = {labelClass:"block w-full mb-2 font-bold"};
   const inputStyle = {inputClass:"w-full p-2 bg-gray-300 rounded-md shadow-sm "}
@@ -51,7 +56,7 @@ const UserForm = (props) => {
           <button type = "submit" className ="items-center p-2 px-6 mt-2 text-white transition-all bg-purple-800 rounded-md shadow-lg w-max hover:bg-purple-900 hover:shadow-none">Add User</button>
         </form>
       </div>
-      <InvalidMessage dataValidity={isValid} />
+      <InvalidMessage dataValidity={isValid} onClickOkay={okayClickHandler}  />
     </div>
     
   );
